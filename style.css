@@ -1,0 +1,145 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    font-size: 12px;
+    /*height: auto;*/overflow: hidden;
+
+}
+* {
+    margin:0;
+}
+
+.wrapper {
+    position: relative;
+    max-width: 220px;
+    padding: 30px;
+    margin:0 auto;
+    min-height: 100vh;
+}
+h1 {
+    font-weight: normal;
+    margin: 0;
+    position: relative;
+    top:0;
+    left: 0;
+    font-size: 2em;
+
+}
+
+.progress {
+    transform: rotate(-90deg);
+    width:100%;
+    height: 100%;
+}
+
+.progress__meter,
+.progress__value {
+    fill: none;
+}
+
+.progress__meter {
+    stroke: #e6e6e6;
+}
+
+.progress__value {
+    stroke: #ffdb4d;
+    stroke-linecap: square;
+
+}
+.progress-bar {
+    position: relative;
+    /*width: 220px;*/
+    margin: 19% auto 0;
+
+}
+.animate {
+    animation: progress 2s infinite alternate;
+}
+.hidden {
+    visibility: hidden;
+}
+
+
+@keyframes progress {
+    from {
+        stroke-dashoffset: 633;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.controls {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.controls div:not(:last-child) {
+    margin-bottom: 15px;
+}
+.controls label {
+    font-weight: bold;
+}
+.controls input, .controls label {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.17em;
+}
+
+.value_control {
+    width: 56px;
+    height: 34px;
+    text-align: center;
+    border: 2px solid #717171;
+    border-radius: 20px;
+    margin-right: 12px;
+}
+
+
+
+.animation_checkbox, .hide_checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 60px;
+    height: 36px;
+    background: #4a4a4a;
+    border-radius: 3em;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: all .2s ease-in-out;
+    margin-right: 12px;
+}
+.animation_checkbox:checked, .hide_checkbox:checked{
+    background: #7ed321;
+}
+
+
+.animation_checkbox:after, .hide_checkbox:after{
+    position: absolute;
+    content: "";
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #fff;
+    -webkit-box-shadow: 0 0 .25em rgba(0,0,0,.3);
+    box-shadow: 0 0 .25em rgba(0,0,0,.3);
+    -webkit-transform: scale(.7);
+    transform: scale(.7);
+    left: -3px;
+    top:-3px;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.animation_checkbox:checked:after, .hide_checkbox:checked:after{
+    left: calc(100% - 38px);
+}
+@media (max-width: 320px) and (orientation: portrait) {
+    .progress-bar {
+        width:160px;
+    }
+}

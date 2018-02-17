@@ -3,6 +3,9 @@ var progress = (function(){
     var progressValue = document.querySelector('.progress__value');
     var RADIUS = 98;
     var CIRCUMFERENCE = 2 * Math.PI * RADIUS;
+    progressValue.style.strokeDasharray = CIRCUMFERENCE;
+
+
 
     return {
         setMod: function(animation, mode){
@@ -46,24 +49,14 @@ var progress = (function(){
     }
 
 
+
 })();
 
 
-var control = document.getElementById('value_control');
-
-var progressValue = document.querySelector('.progress__value');
-
-var RADIUS = 100;
-var CIRCUMFERENCE = 2 * Math.PI * RADIUS;
-
-
-
-
-
-control.addEventListener('input', progress.setValue);
+document.getElementById('value_control').addEventListener('input', progress.setValue);
 document.getElementById('do_animation').addEventListener('change', progress.setMod);
 document.getElementById('hide').addEventListener('change', progress.hideProgressBar);
 
-progressValue.style.strokeDasharray = CIRCUMFERENCE;
+
 // progress.setValue(40);
 // progress.setMod('animated', 'yes');

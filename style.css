@@ -3,8 +3,7 @@ body {
     margin: 0;
     font-family: "Arial", sans-serif;
     font-size: 12px;
-    /*height: auto;*/overflow: hidden;
-
+    overflow: hidden;
 }
 * {
     margin:0;
@@ -149,27 +148,34 @@ h1 {
         margin:0;
         max-width: 100%;
     }
+
     .progress-bar {
-        width:160px;
+        width:50%;
         float: left;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        margin: -20px 0 0 20px;
+        margin: 0;
+    }
+    .progress {
+        width: 160px;
+        height: 160px;
     }
     .controls-wrapper {
         margin-left: 160px;
-        /*position: relative;*/
-        /*top:auto;*/
-        /*left:auto;*/
-        /*transform: none;*/
+        position: relative;
+        top:auto;
+        left:auto;
+        transform: none;
     }
-    /*.controls {*/
-        /*position: absolute;*/
-        /*left:50%;*/
-        /*top:50%;*/
-        /*transform: translate(-50%);*/
-        /*margin: 40px 0 0 0;*/
-    /*}*/
+    .controls-wrapper:after {
+        content: '';
+        clear: both;
+    }
+
+    .progress-controls {
+        position: absolute;
+        left:60%;
+        top:25%;
+        transform: translate(-50%);
+        width: 100%;
+    }
 
 }

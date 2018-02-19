@@ -8,6 +8,7 @@ var progress = (function(){
 
 
     return {
+        /*Функция добавляет анимацию к progress bar */
         setMod: function(animation, mode){
             if(animation==='animated' && mode==='yes') {
                 document.querySelector('.progress__value').classList.add('animate');
@@ -22,22 +23,25 @@ var progress = (function(){
             }
 
         },
+        /*Функция установки значения Progress bar через API или через интерфейс */
         setValue: function(value){
             var controlValue;
 
-            if(control.value !== '') {
+            if(control.value !== '') { // если пользователь ввел значение на экране, то использовать это значение
                 controlValue = control.value;
             }
-            else {
+            else { //если не ввел, то использовать значение из API
                 controlValue = value;
             }
 
+            //строим окружность на основе принятых аргументов или введенных данных
             var progress = controlValue / 100;
             var dashoffset = CIRCUMFERENCE * (1 - progress);
             console.log('progress:', controlValue + '%', '|', 'offset:', dashoffset);
             progressValue.style.strokeDashoffset = dashoffset;
         },
 
+        //функция прячет Progress bar, если переключатель Hide включен и наоборот
         hideProgressBar: function() {
             if(event.target.checked) {
                 document.querySelector('.progress').classList.add('hidden');
@@ -52,11 +56,13 @@ var progress = (function(){
 
 })();
 
+/*Обработчики событий на 3х кнопка*/
 
 document.getElementById('value_control').addEventListener('input', progress.setValue);
 document.getElementById('do_animation').addEventListener('change', progress.setMod);
 document.getElementById('hide').addEventListener('change', progress.hideProgressBar);
 
 
+/*Можно раскомментировать и посмотреть работу API */
 // progress.setValue(40);
 // progress.setMod('animated', 'yes');

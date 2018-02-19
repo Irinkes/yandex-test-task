@@ -9,19 +9,21 @@
 <body>
 <div class="wrapper">
     <h1>Progress</h1>
-    <div class="progress-bar">
-        <svg class="progress" width="220" height="220" viewBox="0 0 220 220">
-            <circle class="progress__meter" cx="110" cy="110" r="98" stroke-width="12" />
-            <circle class="progress__value" cx="110" cy="110" r="98" stroke-width="12" />
-        </svg>
+    <div class="progress-controls">
+        <div class="progress-bar">
+            <svg class="progress" width="220" height="220" viewBox="0 0 220 220">
+                <circle class="progress__meter" cx="110" cy="110" r="98" stroke-width="12" />
+                <circle class="progress__value" cx="110" cy="110" r="98" stroke-width="12" />
+            </svg>
+        </div>
+        <div class="controls-wrapper">
+            <section class="controls">
+                <div><input id="value_control" class="value_control" type="text" value="" /><label for="value_control">Value</label></div>
+                <div><input type="checkbox" id="do_animation" class="animation_checkbox"><label for="do_animation">Animate</label></div>
+                <div><input type="checkbox" id="hide" class="hide_checkbox"> <label for="hide">Hide</label></div>
+            </section>
+        </div>
     </div>
-<div class="controls-wrapper">
-    <section class="controls">
-        <div><input id="value_control" class="value_control" type="text" value="" /><label for="value_control">Value</label></div>
-        <div><input type="checkbox" id="do_animation" class="animation_checkbox"><label for="do_animation">Animate</label></div>
-        <div><input type="checkbox" id="hide" class="hide_checkbox"> <label for="hide">Hide</label></div>
-    </section>
-</div>
 
 </div>
 

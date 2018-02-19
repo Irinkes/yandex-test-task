@@ -159,17 +159,17 @@ h1 {
     }
     .controls-wrapper {
         margin-left: 160px;
-        position: relative;
-        top:auto;
-        left:auto;
-        transform: none;
+        /*position: relative;*/
+        /*top:auto;*/
+        /*left:auto;*/
+        /*transform: none;*/
     }
-    .controls {
-        position: absolute;
-        left:50%;
-        top:50%;
-        transform: translate(-50%);
-        margin: 40px 0 0 0;
-    }
+    /*.controls {*/
+        /*position: absolute;*/
+        /*left:50%;*/
+        /*top:50%;*/
+        /*transform: translate(-50%);*/
+        /*margin: 40px 0 0 0;*/
+    /*}*/
 
 }
